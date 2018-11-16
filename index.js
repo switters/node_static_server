@@ -39,13 +39,7 @@ app.use(function(req, res, next) {
 });
 
 // server public folder
-app.use('/public', express.static(pub_folder))
-
-// if req.path wasn't handled by controllers or static files,
-// handle with catch-all
-app.get('*', (req, res) => {
-  res.sendFile(home_page)
-})
+app.use(express.static(pub_folder))
 
 /**
  * Listen
